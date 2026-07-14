@@ -1,5 +1,4 @@
-from sqlalchemy import Column, Integer, String, ForeignKey
-from datetime import datetime
+from sqlalchemy import Column, Integer, String, ForeignKey, Date
 
 from app.helpers.database import Base
 from app.models.user import User
@@ -10,7 +9,7 @@ class Order(Base):
 
     id = Column(Integer, primary_key=True, index=True, autoincrement=True)
     status = Column(String)
-    date = Column(datetime)
+    date = Column(Date)
     user = Column(Integer, ForeignKey("User.id"))
 
 
@@ -29,3 +28,4 @@ class Order(Base):
             "user": self.user,
             "date": self.date
         }
+    

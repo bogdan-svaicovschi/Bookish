@@ -15,9 +15,12 @@ class Edition(Base):
     bookstore = Column(Integer, ForeignKey("Bookstore.id"))
 
 
-    def __init__(self, name, address):
+    def __init__(self, name, publisher, year, quantity, bookstore):
         self.name = name
-        self.address = address
+        self.publisher = publisher
+        self.year = year
+        self.quantity = quantity
+        self.bookstore = bookstore
 
     def __repr__(self):
         return "<id {}>".format(self.id)
@@ -26,5 +29,10 @@ class Edition(Base):
         return {
             "id": self.id,
             "name": self.name,
-            "address": self.address
+            "publisher": self.publisher,
+            "year": self.year,
+            "quantity": self.quantity,
+            "bookstore": self.bookstore
+
         }
+    

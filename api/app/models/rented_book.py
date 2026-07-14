@@ -1,5 +1,4 @@
-from sqlalchemy import Column, Integer, String, ForeignKey
-from datetime import datetime
+from sqlalchemy import Column, Integer, String, ForeignKey, Date
 
 from app.helpers.database import Base
 from app.models.order import Order
@@ -9,8 +8,8 @@ class RentedBook(Base):
     __tablename__ = "RentedBook"
 
     id = Column(Integer, primary_key=True, index=True, autoincrement=True)
-    date_rented = Column(datetime)
-    due_date = Column(datetime)
+    date_rented = Column(Date)
+    due_date = Column(Date)
     order = Column(Integer, ForeignKey("Order.id"))
 
 
@@ -29,3 +28,4 @@ class RentedBook(Base):
             "due_date": self.due_date,
             "order": self.order
         }
+    

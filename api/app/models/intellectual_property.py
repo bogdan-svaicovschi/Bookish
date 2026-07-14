@@ -27,3 +27,4 @@ class IntellectualProperty(Base):
             "name": self.name,
             "address": self.address
         }
+    

@@ -33,3 +33,4 @@ class Penalty(Base):
             "subscription": self.subscription,
             "value": self.value
         }
+    

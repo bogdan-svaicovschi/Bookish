@@ -11,15 +11,16 @@ class User(Base):
     id = Column(Integer, primary_key=True, index=True, autoincrement=True)
     name = Column(String)
     address = Column(String)
-    email = Column(String)
+    email = Column(String, unique=True)
+    password = Column(String(128))
     phone = Column(String)
 
-
-    def __init__(self, name, address, email, phone):
+    def __init__(self, name, address, email, phone, password):
         self.name = name
         self.address = address
         self.email = email
         self.phone = phone
+        self.password = password
 
     def __repr__(self):
         return "<id {}>".format(self.id)
@@ -32,3 +33,4 @@ class User(Base):
             "email": self.email,
             "phone": self.phone
         }
+    

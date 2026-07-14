@@ -1,5 +1,5 @@
-from sqlalchemy import Column, Integer, String, ForeignKey
-from datetime import datetime
+from sqlalchemy import Column, Integer, String, ForeignKey, Date
+
 
 from app.helpers.database import Base
 from app.models.user import User
@@ -9,10 +9,10 @@ class Subscription(Base):
     __tablename__ = "Subscription"
 
     id = Column(Integer, primary_key=True, index=True, autoincrement=True)
-    start_date = Column(datetime)
-    end_date = Column(datetime)
+    start_date = Column(Date)
+    end_date = Column(Date)
     name = Column(String)
-    discount = Column(float)
+    discount = Column(Integer)
     user = Column(Integer, ForeignKey("User.id"))
 
 
@@ -35,3 +35,4 @@ class Subscription(Base):
             "discount": self.discount,
             "user": self.user
         }
+    

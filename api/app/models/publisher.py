@@ -19,3 +19,4 @@ class Publisher(Base):
             "id": self.id,
             "name" : self.name
         }
+    

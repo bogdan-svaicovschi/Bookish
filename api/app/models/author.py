@@ -20,3 +20,4 @@ class Author(Base):
             "id": self.id,
             "name": self.name,
         }
+    

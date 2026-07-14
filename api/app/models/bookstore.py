@@ -23,3 +23,4 @@ class Bookstore(Base):
             "name": self.name,
             "address": self.address
         }
+    
