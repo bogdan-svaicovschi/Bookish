@@ -6,6 +6,18 @@ from typing import Any
 from app.helpers.database import Base
 from app.helpers.database_connection_string import get_database_connection_string
 
+from app.models.book import Book
+from app.models.bookstore import Bookstore
+from app.models.author import Author
+from app.models.edition import Edition
+from app.models.genre import Genre
+from app.models.intellectual_property import IntellectualProperty
+from app.models.order import Order
+from app.models.publisher import Publisher
+from app.models.penalty import Penalty
+from app.models.rented_book import RentedBook
+from app.models.subscription import Subscription
+from app.models.user import User
 from app.models.example import Example
 
 def run_migrations_offline(context: Any, config: Any, target_metadata: Any):
@@ -49,3 +61,4 @@ if context.is_offline_mode():
     run_migrations_offline(context=context, config=config, target_metadata=target_metadata)
 else:
     run_migrations_online(context=context, config=config, target_metadata=target_metadata)
+    
